@@ -18,6 +18,8 @@ class Program
             Console.WriteLine("Average: " + StatisticsHelper.CalculateAverage(numbers));
 
             Console.WriteLine("Max: " + StatisticsHelper.CalculateMax(numbers));
+
+            Console.WriteLine("Min: " + StatisticsHelper.CalculateMin(numbers));
         }
         catch (Exception)
         {
@@ -60,6 +62,12 @@ class StatisticsHelper
 
     public static int CalculateMin(int[] values)
     {
-        #placeholder for logic
+        int min = values[0];
+        foreach (var v in values)
+        {
+            if (v < min)
+            min = v;
+        }
+        return min;
     }
 }
