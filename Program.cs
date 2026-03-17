@@ -11,10 +11,19 @@ class Program
 
         int[] numbers = Array.ConvertAll(parts, int.Parse);
 
-        Console.WriteLine("You entered:");
-        foreach (var n in numbers)
+        Console.WriteLine("Sum: " + StatisticsHelper.CalculateSum(numbers));
+    }
+}
+
+class StatisticsHelper
+{
+    public static int CalculateSum(int[] values)
+    {
+        int sum = 0;
+        foreach (var v in values)
         {
-            Console.WriteLine(n);
+            sum += v;
         }
+        return sum;
     }
 }
