@@ -16,6 +16,8 @@ class Program
             Console.WriteLine("Sum: " + StatisticsHelper.CalculateSum(numbers));
 
             Console.WriteLine("Average: " + StatisticsHelper.CalculateAverage(numbers));
+
+            Console.WriteLine("Max: " + StatisticsHelper.CalculateMax(numbers));
         }
         catch (Exception)
         {
@@ -43,5 +45,16 @@ class StatisticsHelper
 
         int sum = CalculateSum(values);
         return (double)sum / values.Length;   
+    }
+
+    public static int CalculateMax(int[] values)
+    {
+    int max = values[0];
+    foreach (var v in values)
+        {
+        if (v > max)
+            max = v;
+        }
+    return max;
     }
 }
