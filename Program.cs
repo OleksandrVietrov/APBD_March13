@@ -14,6 +14,8 @@ class Program
             int[] numbers = Array.ConvertAll(parts, int.Parse);
 
             Console.WriteLine("Sum: " + StatisticsHelper.CalculateSum(numbers));
+
+            Console.WriteLine("Average: " + StatisticsHelper.CalculateAverage(numbers));
         }
         catch (Exception)
         {
@@ -33,5 +35,13 @@ class StatisticsHelper
             sum += v;
         }
         return sum;
+    }
+
+    public static double CalculateAverage(int[] values)
+    {
+        if (values.Length == 0) return 0;
+
+        int sum = CalculateSum(values);
+        return (double)sum / values.Length;   
     }
 }
