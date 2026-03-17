@@ -12,7 +12,7 @@ class Program
             string[] parts = input.Split(' ');
 
             int[] numbers = Array.ConvertAll(parts, int.Parse);
-
+            Console.WriteLine("Processing numbers");
             Console.WriteLine("Sum: " + StatisticsHelper.CalculateSum(numbers));
 
             Console.WriteLine("Average: " + StatisticsHelper.CalculateAverage(numbers));
