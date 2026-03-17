@@ -4,14 +4,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter numbers (separated by space)");
+        try
+        {
+            Console.WriteLine("Enter numbers (separated by space)");
         
-        string input = Console.ReadLine();
-        string[] parts = input.Split(' ');
+            string input = Console.ReadLine();
+            string[] parts = input.Split(' ');
 
-        int[] numbers = Array.ConvertAll(parts, int.Parse);
+            int[] numbers = Array.ConvertAll(parts, int.Parse);
 
-        Console.WriteLine("Sum: " + StatisticsHelper.CalculateSum(numbers));
+            Console.WriteLine("Sum: " + StatisticsHelper.CalculateSum(numbers));
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("an error occured");
+        }
+        
     }
 }
 
